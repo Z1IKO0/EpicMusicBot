@@ -38,8 +38,8 @@ def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('𝐒𝐔𝐏𝐏𝐎𝐑𝐓 👬', url='https://t.me/LuxeSUP'),
-                    InlineKeyboardButton('Öz Botunu Yarat 👩‍💻', url='https://t.me/epicprojects/9')
+                    InlineKeyboardButton('Dəstək ', url='https://t.me/zikointime'),
+                    InlineKeyboardButton('Təklif və Fikirlər', url='https://t.me/officialzbot')
                 ]
             ]
         )
@@ -95,7 +95,7 @@ def a(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎧 Başlıq : [{title[:35]}]({link})\n⏳ Müddət : `{duration}`\n🎬 Mənbə : `Youtube`\n👁‍🗨 Baxış Sayı : `{views}`\n\n💌 𝐁𝐲 : @EpicProjects'
+        rep = f'🎧 Başlıq : [{title[:35]}]({link})\n⏳ Müddət : `{duration}`\n🎬 Mənbə : `Youtube`\n👁‍🗨 Baxış Sayı : `{views}`\n\n💌 By : @officialzbot'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -103,7 +103,7 @@ def a(client, message):
         message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name)
         m.delete()
     except Exception as e:
-        m.edit('❌ Xəta\n\n Xətanın həll edilməsi üçün @EpicProjects müraciət et ❤️')
+        m.edit('❌ Xəta\n\n Xətanın həll edilməsi üçün @officialzbot müraciət et ❤️')
         print(e)
     try:
         os.remove(audio_file)
